@@ -1,6 +1,0 @@
-Affichage d'un objet graphique (10 5)
-Cet objet graphique est un rectangle: (2 2 10 5)
-------------
-super.affichage() appelle la méthode du parent, affichant "Affichage d'un objet graphique"
-super.x et super.y récupèrent les valeurs du parent (10 et 5)
-Les x et y de la classe Rectangle (2 et 2) sont utilisés dans la seconde ligne
