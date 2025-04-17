@@ -1,15 +1,31 @@
-    Valide : Même type (Cl).
+    o1 = o2;
+    ✅ Valide (Compilation)
+    Explication : o2 est déclaré comme C1 et instancié en C11. L’assignation de C1 à C1 est autorisée.
 
-    Valide : Upcasting implicite (Cl11 → Cl).
+    o1 = o3;
+    ✅ Valide (Compilation)
+    Explication : Upcasting implicite de C111 (sous-classe de C1) vers C1.
 
-    Invalide (Erreur de compilation) : Downcasting implicite interdit (Cl → Cl11).
+    o3 = o1;
+    ❌ Invalide (Erreur de compilation)
+    Explication : Downcasting implicite interdit (C1 → C111). Un cast explicite est nécessaire.
 
-    Invalide (Erreur de compilation) : o5 est de type Cl, incompatible avec Cl1.
+    o4 = o5;
+    ❌ Invalide (Erreur de compilation)
+    Explication : o5 est de type C1, et o4 attend un C11. Pas de relation directe sans cast.
 
-    Invalide (Erreur de compilation si C111 n'existe pas ; sinon, erreur d'exécution si o1 n'est pas C111).
+    o3 = (C111) o1;
+    ❌ Invalide (Erreur d’exécution : ClassCastException)
+    Explication : o1 est une instance de C1, pas de C111. Le cast échoue à l’exécution.
 
-    Valide (À l'exécution) : Cast explicite de Cl vers Cl11 (possible car o5 est réellement Cl11).
+    o4 = (C11) o5;
+    ✅ Valide (Exécution)
+    Explication : o5 est réellement un C111 (sous-classe de C11). Le cast explicite est accepté.
 
-    Invalide (Erreur de compilation) : Classe C111 inexistante.
+    o4 = (C111) o2;
+    ❌ Invalide (Erreur d’exécution : ClassCastException)
+    Explication : o2 est une instance de C11, pas de C111. Le cast est impossible.
 
-    Valide (À l'exécution) : Cast explicite de Cl vers Cl11 (possible car o5 est Cl11).
+    o3 = (C11) o5;
+    ❌ Invalide (Erreur de compilation)
+    Explication : o3 est de type C111, et (C11) o5 produit un C11. Assigner C11 à C111 nécessite un cast explicite vers C111.
