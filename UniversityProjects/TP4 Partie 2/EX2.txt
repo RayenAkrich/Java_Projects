@@ -1,0 +1,15 @@
+    Valide : Même type (Cl).
+
+    Valide : Upcasting implicite (Cl11 → Cl).
+
+    Invalide (Erreur de compilation) : Downcasting implicite interdit (Cl → Cl11).
+
+    Invalide (Erreur de compilation) : o5 est de type Cl, incompatible avec Cl1.
+
+    Invalide (Erreur de compilation si C111 n'existe pas ; sinon, erreur d'exécution si o1 n'est pas C111).
+
+    Valide (À l'exécution) : Cast explicite de Cl vers Cl11 (possible car o5 est réellement Cl11).
+
+    Invalide (Erreur de compilation) : Classe C111 inexistante.
+
+    Valide (À l'exécution) : Cast explicite de Cl vers Cl11 (possible car o5 est Cl11).
